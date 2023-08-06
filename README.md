@@ -2,7 +2,7 @@
 
 ## Overview
 
-Welcome to the `asdf-python1` repository! This repository is exclusively managed and utilized by the `python-team`. It serves as the central hub for all developments, experiments, and collaborations that are conducted using the Python programming language within our organization.
+Welcome to the `asdf-python2` repository! This repository is exclusively managed and utilized by the `python-team`. It serves as the central hub for all developments, experiments, and collaborations that are conducted using the Python programming language within our organization.
 
 ## Purpose
 
