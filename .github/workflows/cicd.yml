@@ -1,4 +1,4 @@
-name: Build, Test and Deploy
+name: Build, Test and Deploy Python2
 
 on:
   push:
@@ -14,26 +14,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: '3.8'
-    - name: Build
-      run: bash build.sh
+    - name: Make build.sh executable
+      run: chmod +x ./build.sh
+    - name: Make build.sh executable
+      run: ./build.sh
 
   test:
     needs: build
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: '3.8'
-    - name: Test
-      run: bash test.sh
+    - name: Make test.sh executable
+      run: chmod +x ./test.sh
+    - name: Make test.sh executable
+      run: ./test.sh
 
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -41,10 +45,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: '3.8'
-    - name: Deploy
-      run: bash deploy.sh
+    - name: Make deploy.sh executable
+      run: chmod +x ./deploy.sh
+    - name: Make deploy.sh executable
+      run: ./deploy.sh
